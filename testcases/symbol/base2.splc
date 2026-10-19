@@ -1,0 +1,7 @@
+int my_func(int a){}
+int my_func2(char b){}
+int my_func(int a, int b){}
+int main() {
+    return 0;
+}
+char my_func2(int x){}

@@ -1,0 +1,7 @@
+int local;
+int x;
+int main() {
+    local = 123;
+    char x;
+    int y = 1;
+}
