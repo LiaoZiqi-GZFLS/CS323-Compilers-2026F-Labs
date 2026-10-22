@@ -1,5 +1,4 @@
 Variables:
-local: int
 x: int
 
 Functions:

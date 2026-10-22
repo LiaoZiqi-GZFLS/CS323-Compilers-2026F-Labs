@@ -37,7 +37,12 @@ public class Scope {
         //TODO:
         //If the current scope does not contain Variable, create one and add it to the current Scope;
         // otherwise, return null.
-        return null;
+        if (variables.containsKey(name)) {
+            return null;
+        } else {
+            variables.put(name, new VariableSymbol(name, type));
+            return variables.get(name);
+        }
     }
 
     // define function
@@ -45,7 +50,13 @@ public class Scope {
         // TODO：
         // If the current scope does not contain a Function, create one and add it to the current Scope;
         // otherwise, return null
-        return null;
+        if (functions.containsKey(name)) {
+            return null;
+        } else {
+            FunctionSymbol functionSymbol = new FunctionSymbol(name, returnType, params, this);
+            functions.put(name, functionSymbol);
+            return functions.get(name);
+        }
     }
 
     public VariableSymbol lookupVariable(String name) {
@@ -53,7 +64,14 @@ public class Scope {
         //Find name in the current scope; if it exists, return the corresponding VariableSymbol.
         // If it does not exist, search in the parent scope
         // If it cannot be found, return null.
-        return null;
+        if (variables.containsKey(name)) {
+            return variables.get(name);
+        } else {
+            if (parent != null) {
+                return parent.lookupVariable(name);
+            }
+            return null;
+        }
     }
 
     public VariableSymbol lookupCurrentVariable(String name) {
@@ -65,6 +83,13 @@ public class Scope {
         //Find name in the current scope; if it exists, return the corresponding FunctionSymbol.
         // If it does not exist, search in the parent scope
         // If it cannot be found, return null.
-        return null;
+        if (functions.containsKey(name)) {
+            return functions.get(name);
+        } else {
+            if (parent != null) {
+                return parent.lookupFunction(name);
+            }
+            return null;
+        }
     }
 }

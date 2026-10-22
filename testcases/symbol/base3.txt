@@ -1,3 +1,0 @@
-2:23: error: Redeclaration of 'x'
-5:8: error: Redeclaration of 'x'
-6:8: error: Redeclaration of 'y'

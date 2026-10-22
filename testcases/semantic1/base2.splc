@@ -1,0 +1,4 @@
+int a;
+char a;
+int c[2];
+char c[1][2][3];

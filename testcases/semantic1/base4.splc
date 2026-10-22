@@ -1,0 +1,21 @@
+int x;
+int main(){
+    int a = 5;
+    int b = 6;
+    int c[3][2][1];
+    char d[1][2];
+    {
+        int x = 7;
+        a = 5;
+        {
+            b = 2;
+            x = 8;
+        }
+        x = 'c';
+        c = 1;
+        d = 'h';
+        int z = 'd';
+        char k = 1;
+    }
+    x = 10;
+}

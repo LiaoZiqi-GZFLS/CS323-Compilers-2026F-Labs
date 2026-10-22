@@ -1,2 +1,0 @@
-3:4: error: Redeclaration of 'my_func'
-7:5: error: Redeclaration of 'my_func2'

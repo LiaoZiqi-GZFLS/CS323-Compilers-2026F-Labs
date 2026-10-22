@@ -1,1 +1,2 @@
 2:5: error: Redefinition of 'a'
+4:5: error: Redefinition of 'c'

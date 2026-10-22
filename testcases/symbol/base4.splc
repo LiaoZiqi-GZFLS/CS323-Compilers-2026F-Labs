@@ -1,4 +1,0 @@
-int main() {
-    local = 123;
-}
-int local;

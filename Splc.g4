@@ -6,7 +6,12 @@ program
 
 globalDef
     : specifier Identifier LPAREN funcArgs RPAREN LBRACE statement* RBRACE      // 函数定义
-    | specifier Identifier SEMI                                                  // 全局变量定义
+    | specifier varDec SEMI                                                  // 全局变量定义
+    ;
+
+varDec
+    : Identifier
+    | varDec LBRACK NUMBER RBRACK
     ;
 
 specifier
@@ -21,7 +26,7 @@ funcArgs
 
 statement
     : LBRACE statement* RBRACE                                      # CombineStmt
-    | specifier Identifier (ASSIGN expression)? SEMI                # LocalVariableStmt
+    | specifier varDec (ASSIGN expression)? SEMI                    # LocalVariableStmt
     | RETURN expression SEMI                                        # ReturnStmt
     | expression SEMI                                               # ExpressionStmt
     ;
@@ -31,6 +36,7 @@ expression
     | Identifier
     | NUMBER
     | CHAR_VALUE
+    | expression LBRACK expression RBRACK
     | expression (STAR | DIV ) expression
     | expression (PLUS | MINUS) expression
     | <assoc=right> expression ASSIGN expression

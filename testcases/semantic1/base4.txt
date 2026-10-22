@@ -1,0 +1,2 @@
+15:8: error: InCompatible type of c. expect: 'int[1][2][3]' but actual: 'int'
+16:8: error: InCompatible type of d. expect: 'char[2][1]' but actual: 'char'
